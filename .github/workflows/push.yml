@@ -11,6 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: build docker project
+        run: make build
+
       - name: make tests
         run: make ci
 
@@ -24,4 +27,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: user/app:latest
+          tags: trep1337/devops-for-programmers-project-lvl1:latest

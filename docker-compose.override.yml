@@ -6,23 +6,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - 8080:8080
-    command: npm run dev
+    command: bash -c 'sleep 3 && npm start'
     volumes:
       - '/app/'
-
-  caddy:
-    image: caddy:2.5.1
-    restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - $PWD/caddy/Caddyfile:/etc/caddy/Caddyfile
-      - caddy_data:/data
-      - caddy_config:/config
     depends_on:
-      - app
-
-volumes:
-  caddy_data:
-  caddy_config:
+      - db

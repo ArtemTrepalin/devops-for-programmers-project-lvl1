@@ -8,3 +8,25 @@ services:
     command: make test
     volumes:
       - '/app/'
+    depends_on:
+      - db
+
+  caddy:
+    image: caddy:2.5.1
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - $PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile
+    depends_on:
+      - app
+
+  db:
+    image: postgres:14
+    restart: always
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRESQL_USER=postgres
+      - POSTGRESQL_PASSWORD=postgres
+      - POSTGRES_HOST_AUTH_METHOD=trust

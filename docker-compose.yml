@@ -15,7 +15,8 @@ services:
     volumes:
       - "./app:/app"
     depends_on:
-      - db
+      db:
+        condition: healthcheck
 
   caddy:
     image: caddy:2.5.1

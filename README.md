@@ -2,7 +2,7 @@
 [![Actions Status](https://github.com/ArtemTrepalin/devops-for-programmers-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/ArtemTrepalin/devops-for-programmers-project-lvl1/actions)
 [![Build](https://github.com/ArtemTrepalin/devops-for-programmers-project-lvl1/workflows/push/badge.svg)](https://github.com/ArtemTrepalin/devops-for-programmers-project-lvl1/actions)
 
-# JS Fastify Blog in Docker
+# JS Fastify Blog Docker image
 This docker image based on the Hexlet project JS Fastify Blog
 
 ### Links

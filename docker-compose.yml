@@ -12,7 +12,8 @@ services:
       DATABASE_PASSWORD: $DATABASE_PASSWORD
       DATABASE_PORT: $DATABASE_PORT
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   caddy:
     image: caddy:2.5.1
